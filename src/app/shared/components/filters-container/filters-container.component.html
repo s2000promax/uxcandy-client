@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-content>
+    <div>
+      <h3>Создать</h3>
+      <app-rounded-button
+        (onButtonClick)="handleCreate()"
+        [type]="'add'"
+      ></app-rounded-button>
+    </div>
+    <div>
+      <h3>Сортировка</h3>
+      <mat-button-toggle-group
+        [(ngModel)]="sortDirection"
+        (ngModelChange)="onSortDirectionChange($event)"
+        name="favoriteColor"
+        aria-label="Favorite Color"
+      >
+        <mat-button-toggle value="asc">По возрастанию</mat-button-toggle>
+        <mat-button-toggle value="desc">По убыванию</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div>
+      <h3>Сортировка по</h3>
+      <mat-button-toggle-group
+        [(ngModel)]="sortField"
+        (ngModelChange)="onSortFieldChange($event)"
+        name="favoriteColor"
+        aria-label="Favorite Color"
+      >
+        <mat-button-toggle value="id">ID</mat-button-toggle>
+        <mat-button-toggle value="username">Имя</mat-button-toggle>
+        <mat-button-toggle value="email">E-mail</mat-button-toggle>
+        <mat-button-toggle value="status">Статус</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+  </mat-card-content>
+</mat-card>

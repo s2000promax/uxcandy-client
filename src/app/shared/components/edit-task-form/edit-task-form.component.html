@@ -1,0 +1,78 @@
+<mat-card>
+  <mat-card-header>Редактировать задачу {{ data.id }}</mat-card-header>
+  <div class="loader" *ngIf="submitted">
+    <mat-progress-bar mode="buffer"></mat-progress-bar>
+  </div>
+  <mat-error *ngIf="error.message?.token" class="token-error">
+    {{ error.message?.token }}
+  </mat-error>
+  <mat-card-content>
+    <div class="divider"></div>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="control-container">
+        <div class="input-container">
+          <input
+            matInput
+            placeholder="Имя пользователя"
+            formControlName="username"
+            name="username"
+          />
+          <mat-error *ngIf="error.message?.username">
+            {{ error.message?.username }}
+          </mat-error>
+        </div>
+        <div class="input-container">
+          <input
+            matInput
+            placeholder="е-mail"
+            formControlName="email"
+            name="email"
+          />
+          <mat-error *ngIf="error.message?.email">
+            {{ error.message?.email }}
+          </mat-error>
+        </div>
+      </div>
+      <div class="control-container">
+        <div class="input-container">
+          <input
+            matInput
+            placeholder="Текст задачи"
+            formControlName="text"
+            name="text"
+          />
+          <mat-error *ngIf="error.message?.text">
+            {{ error.message?.text }}
+          </mat-error>
+        </div>
+        <div class="input-container">
+          <mat-slide-toggle formControlName="status" labelPosition="before"
+            >Статус задачи</mat-slide-toggle
+          >
+        </div>
+      </div>
+    </form>
+    <div class="control-container">
+      <button
+        mat-fab
+        extended
+        color="warn"
+        [disabled]="submitted"
+        (click)="onCancel()"
+      >
+        <mat-icon>cancel</mat-icon>
+        Отменить
+      </button>
+      <button
+        mat-fab
+        extended
+        color="primary"
+        [disabled]="submitted"
+        (click)="onSubmit()"
+      >
+        <mat-icon>save</mat-icon>
+        Сохранить
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,40 @@
+:host {
+  max-width: 600px;
+  width: 100%;
+}
+
+mat-card {
+  width: 100%;
+  position: relative;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+}
+
+.control-container {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  .input-container {
+    width: 100%;
+
+    & > input {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    mat-error {
+      font-size: 12px;
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+  width: 100%;
+  top: 42px;
+}

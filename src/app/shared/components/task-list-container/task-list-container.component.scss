@@ -1,0 +1,56 @@
+:host {
+  max-width: 1200px;
+  width: 100%;
+}
+
+mat-card {
+  border-radius: 20px;
+  width: 100%;
+  position: relative;
+}
+
+mat-card-actions {
+  margin: 20px 0 10px 0;
+}
+
+mat-card-subtitle {
+  margin: 0 35px 20px 35px;
+  display: flex;
+  justify-content: space-between;
+
+  .subtitle-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+
+    .id {
+      max-width: 50px;
+      width: 100%;
+    }
+
+    .username {
+      max-width: 100px;
+      width: 100%;
+    }
+
+    .email {
+      max-width: 200px;
+      width: 100%;
+    }
+
+    .text {
+      max-width: 400px;
+      width: 100%;
+    }
+    .status {
+      max-width: 200px;
+      width: 100%;
+    }
+  }
+
+  .action {
+    width: 76px;
+    height: 10px;
+  }
+}

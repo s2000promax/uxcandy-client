@@ -1,0 +1,47 @@
+mat-card {
+  margin-bottom: 20px;
+  background-color: #eeeeee;
+}
+
+mat-card-content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.info-container {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+
+  span {
+    overflow-wrap: anywhere;
+  }
+
+  .id {
+    max-width: 50px;
+    width: 100%;
+  }
+
+  .username {
+    max-width: 100px;
+    width: 100%;
+  }
+
+  .email {
+    max-width: 200px;
+    width: 100%;
+  }
+
+  .text {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .status {
+    max-width: 200px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-content>
+    <div class="info-container">
+      <span class="id">{{ task.id }}</span>
+      <span class="username">{{ task.username }}</span>
+      <span class="email">{{ task.email }}</span>
+      <span class="text">{{ task.text }}</span>
+      <span class="status">{{ task.status | status }}</span>
+    </div>
+    <app-rounded-button
+      [type]="'edit'"
+      [disabled]="!(authService.isAuth$ | async)"
+      (onButtonClick)="onClick()"
+    ></app-rounded-button>
+  </mat-card-content>
+</mat-card>

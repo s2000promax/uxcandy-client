@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-card-actions>
+    <app-filters-container (onCreate)="onCreateTask()"></app-filters-container>
+  </mat-card-actions>
+  <mat-card-subtitle>
+    <div class="subtitle-container">
+      <span class="id">ID</span>
+      <span class="username">Имя</span>
+      <span class="email">E-mail</span>
+      <span class="text">Текст задачи</span>
+      <span class="status">Статус задачи</span>
+    </div>
+    <span class="action"></span>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <div *ngIf="!(taskService.taskList$ | async)?.length; else taskList">
+      <span>У вас нет текущих заданий</span>
+    </div>
+    <mat-paginator
+      *ngIf="(filtersService.totalTasksCount$ | async)! > 2"
+      [length]="(filtersService.totalTasksCount$ | async)!"
+      [pageSize]="3"
+      [hidePageSize]="true"
+      aria-label="Select page"
+      (page)="onPageChange($event)"
+    >
+    </mat-paginator>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #taskList>
+  <div *ngFor="let task of taskService.taskList$ | async">
+    <app-task-card [task]="task" (onEdit)="onEditTask($event)"></app-task-card>
+  </div>
+</ng-template>
