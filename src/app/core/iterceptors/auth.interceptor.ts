@@ -19,7 +19,7 @@ export class AuthInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler,
   ): Observable<HttpEvent<unknown>> {
-    let params = new HttpParams().set('developer', 'test213');
+    let params = new HttpParams().set('developer', 'test2132');
 
     if (request.method === 'GET') {
       if (!this.filtersService) {
