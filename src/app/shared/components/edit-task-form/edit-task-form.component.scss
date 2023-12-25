@@ -1,0 +1,49 @@
+:host {
+  max-width: 600px;
+  width: 100%;
+}
+
+mat-card {
+  border-radius: 20px;
+  width: 100%;
+  position: relative;
+}
+
+mat-card-header {
+  margin-bottom: 20px;
+}
+
+.control-container {
+  width: 100%;
+  min-height: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  .input-container {
+    width: 100%;
+
+    & > input {
+      width: 100%;
+      max-width: 270px;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    mat-error {
+      font-size: 12px;
+    }
+  }
+}
+
+.loader {
+  position: absolute;
+  width: 100%;
+  top: 42px;
+}
+
+.token-error {
+  position: absolute;
+  top: 34px;
+  left: 16px;
+}
